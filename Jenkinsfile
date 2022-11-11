@@ -65,7 +65,7 @@ node('slave_A') {
 			 sh 'pwd'
 			 sh 'ls -ltr'
 			 sh 'kubectl get deployments edge-remote-node-deployment -o wide'
-			 sh 'kubectl set image deployment/edge-remote-node-deployment utube-micro=sarafriends1986/edge-remote-node:v_00.00.001'
+			 sh 'kubectl set image deployment/edge-remote-node-deployment edge-remote-node=sarafriends1986/edge-remote-node:v_00.00.001'
 			 echo "After Deploying new release version to Kubernetes..."
 			 sh 'kubectl get deployments edge-remote-node-deployment -o wide'
 			 

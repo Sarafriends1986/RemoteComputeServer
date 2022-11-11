@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-remote-node-deployment
+  labels:
+    app: edge-remote-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: edge-remote-node
+  template:
+    metadata:
+      labels:
+        app: edge-remote-node
+    spec:
+      containers:
+      - name: edge-remote-node
+        image: sarafriends1986/edge-remote-node:v001
+        ports:
+        - containerPort: 8585

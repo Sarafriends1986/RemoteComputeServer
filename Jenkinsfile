@@ -23,7 +23,7 @@ node('slave_A') {
 			 sh 'echo "Docker Build..."'
 			 sh 'pwd'
 			 sh 'ls -ltr'
-			 sh 'docker build -t sarafriends1986/edge-remote-node:v_00.00.002 .'
+			 sh 'docker build -t sarafriends1986/edge-remote-node:v_00.00.004 .'
 			 
 		   } else {
 			  echo "Nothing"
@@ -44,7 +44,7 @@ node('slave_A') {
 			 sh 'pwd'
 			 sh 'ls -ltr'
 			 sh 'docker images sarafriends1986/edge-remote-node'
-			 sh 'docker push sarafriends1986/edge-remote-node:v_00.00.002'
+			 sh 'docker push sarafriends1986/edge-remote-node:v_00.00.004'
 			 
 		   } else {
 			   echo "Nothing"
@@ -65,7 +65,7 @@ node('slave_A') {
 			 sh 'pwd'
 			 sh 'ls -ltr'
 			 sh 'kubectl get deployments edge-remote-node-deployment -o wide'
-			 sh 'kubectl set image deployment/edge-remote-node-deployment edge-remote-node=sarafriends1986/edge-remote-node:v_00.00.002'
+			 sh 'kubectl set image deployment/edge-remote-node-deployment edge-remote-node=sarafriends1986/edge-remote-node:v_00.00.004'
 			 echo "After Deploying new release version to Kubernetes..."
 			 sh 'kubectl get deployments edge-remote-node-deployment -o wide'
 			 
